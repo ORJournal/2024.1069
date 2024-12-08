@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$#" != 1 ]]; then
-  echo "Usage: collect_mittelmann_lp.sh output_directory" 1>&2
+  echo "Usage: collect_mittelmann_lp.sh instance_folder" 1>&2
   exit 1
 fi
 

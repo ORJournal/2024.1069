@@ -89,7 +89,7 @@ function main()
 
     res = [res_time, res_term]
 
-    JLD2.jldsave(joinpath("$(output_directory)","$(problem_name)_$(tolerance).jld2"); res)
+    JLD2.jldsave(joinpath("$(output_directory)","Gurobi_$(gurobi_presolve)_$(gurobi_method)_$(gurobi_threads)_$(problem_name)_$(tolerance).jld2"); res)
 end
 
 main()

@@ -30,7 +30,7 @@ def run(args):
     
     res = [flag, f"{solver.iterations()}", f"{solver.wall_time()/1000}"]
 
-    with open(f"{args.output_directory}/{args.problem_name}_{args.num_threads}_{args.high_accuracy}.txt", 'w') as f:
+    with open(f"{args.output_directory}/PDLP_{args.problem_name}_{args.num_threads}_{args.high_accuracy}.txt", 'w') as f:
         for line in res:
             f.write(line)
             f.write('\n')

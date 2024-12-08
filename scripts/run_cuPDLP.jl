@@ -119,7 +119,7 @@ function main()
 
     println()
 
-    JLD2.jldsave(joinpath("$(output_directory)","$(problem_name)_$(tolerance).jld2"); res)
+    JLD2.jldsave(joinpath("$(output_directory)","cuPDLP_$(problem_name)_$(tolerance).jld2"); res)
 end
 
 main()

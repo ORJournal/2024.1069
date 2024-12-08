@@ -2,7 +2,7 @@
 
 if [[ "$#" != 3 ]]; then
   echo "Usage: collect_miplib_relaxations.sh temporary_dir" \
-      "miplib_relaxations_instances_list output_directory" 1>&2
+      "miplib_relaxations_instances_list instance_folder" 1>&2
   exit 1
 fi
 

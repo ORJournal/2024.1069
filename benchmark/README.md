@@ -8,7 +8,7 @@ This dataset is curated from the MIPLIB 2017 collection, filtered as specified
 in `miplib_relaxations_instances_list`. `collect_miplib_relaxations.sh` has the following argument structure:
 
 ```sh
-$ ./collect_mip_relaxations.sh TEMPORARY_DIRECTORY BENCHMARK_INSTANCE_LIST OUTPUT_DIRECTORY
+$ ./collect_mip_relaxations.sh TEMPORARY_DIRECTORY BENCHMARK_INSTANCE_LIST INSTANCE_FOLDER
 ```
 
 ## Mittelmann's LP dataset
@@ -16,6 +16,6 @@ $ ./collect_mip_relaxations.sh TEMPORARY_DIRECTORY BENCHMARK_INSTANCE_LIST OUTPU
 This dataset contains the union of the instances from Hans Mittelmann's linear programming benchmark sites, as specified in `mittelmann_lp_instances_list`. `collect_mittelmann_lp.sh` has the following argument structure:
 
 ```sh
-$ ./collect_mittelmann_lp.sh OUTPUT_DIRECTORY
+$ ./collect_mittelmann_lp.sh INSTANCE_FOLDER
 ```
 
