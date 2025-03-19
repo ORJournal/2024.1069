@@ -1,6 +1,18 @@
-# 2024.1069
+[![Operations Research Journal Logo](https://orjournal.github.io/OperationsReseachHeader.jpg)](https://pubsonline.informs.org/journal/opre)
 
-This repository contains code to reproduce the numerical experiments in the paper. 
+# cuPDLP.jl: A GPU Implementation of Restarted Primal-Dual Hybrid Gradient for Linear Programming in Julia
+
+This archive is distributed in association with the journal [Operations Research](https://pubsonline.informs.org/journal/opre) under the [MIT License](LICENSE).
+
+The software in this repository is a snapshot of the software that was used in the research reported in the paper [cuPDLP.jl: A GPU Implementation of Restarted Primal-Dual Hybrid Gradient for Linear Programming in Julia]() by Haihao Lu and Jinwen Yang.
+
+## Cite
+
+To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs.
+
+## Description
+
+The goal of this repository is to replicate the numerical experiments in the paper "cuPDLP.jl: A GPU Implementation of Restarted Primal-Dual Hybrid Gradient for Linear Programming in Julia" by Haihao Lu and Jinwen Yang.
 
 ## Setup
 
@@ -15,17 +27,19 @@ OR-Tools/PDLP is used through its Python interface. OR-Tools can be installed as
 $ python -m pip install ortools
 ```
 
+A valid license is required to use Gurobi. See [here](https://www.gurobi.com/academia/academic-program-and-licenses/) for an academic license.
+
 ## Benchmarking
 The repository includes scripts to download and prepare benchmark datasets required for numerical experiments. Refer to the detailed instructions in the `./benchmark` directory for setting up the datasets.
 
 
-## Running the Experiments
+## Running Experiments
 
-The following commands assume the repository's root directory as the working directory.
+The following commands assume the repository's root directory as the working directory. The scripts are located in the `./scripts` folder, the source code for the algorithms and methods developed in the paper are located in the `./src` folder.
 
 ### Run All Instances
 
-To run all instances across solvers, use the script:
+To run all instances across solvers and summarize results, use the script:
 ```shell
 $ ./scripts/run_all.sh \
 MIPLIB_INSTANCE_DIR \
@@ -123,3 +137,13 @@ $ python scripts/run_PDLP.py \
 --time_sec_limit=TIME_SEC_LIMIT \
 --num_threads=NUM_THREADS \       
 ```
+
+## Ongoing Development
+
+This code is being developed on an on-going basis at the author-maintained
+[cuPDLP.jl](https://github.com/jinwen-yang/cuPDLP.jl) Julia package.
+
+## Support
+
+For support in using this software, submit an
+[issue](https://github.com/jinwen-yang/cuPDLP.jl/issues/new) here.

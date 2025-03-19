@@ -17,7 +17,6 @@ for lp in ${INSTANCE_LIST}
 do
     echo ${lp}
     echo '*********************** 1 THREAD ***********************'
-    gzip -dkc < ${INSTANCE_DIR}/${lp}.mps.gz > ${OUTPUT_DIR}/${lp}.mps
     python run_PDLP.py \
            --problem_name=${lp} \
            --time_sec_limit=15000 \
@@ -28,7 +27,6 @@ do
     echo 
 
     echo '*********************** 4 THREADS ***********************'
-    gzip -dkc < ${INSTANCE_DIR}/${lp}.mps.gz > ${OUTPUT_DIR}/${lp}.mps
     python run_PDLP.py \
            --problem_name=${lp} \
            --time_sec_limit=15000 \
@@ -39,7 +37,6 @@ do
     echo 
 
     echo '*********************** 16 THREADS ***********************'
-    gzip -dkc < ${INSTANCE_DIR}/${lp}.mps.gz > ${OUTPUT_DIR}/${lp}.mps
     python run_PDLP.py \
            --problem_name=${lp} \
            --time_sec_limit=15000 \
@@ -57,7 +54,6 @@ for lp in ${INSTANCE_LIST}
 do
     echo ${lp}
     echo '*********************** 1 THREAD ***********************'
-    gzip -dkc < ${INSTANCE_DIR}/${lp}.mps.gz > ${OUTPUT_DIR}/${lp}.mps
     python run_PDLP.py \
            --problem_name=${lp} \
            --time_sec_limit=15000 \
@@ -68,7 +64,6 @@ do
     echo 
 
     echo '*********************** 4 THREADS ***********************'
-    gzip -dkc < ${INSTANCE_DIR}/${lp}.mps.gz > ${OUTPUT_DIR}/${lp}.mps
     python run_PDLP.py \
            --problem_name=${lp} \
            --time_sec_limit=15000 \
@@ -79,7 +74,6 @@ do
     echo 
 
     echo '*********************** 16 THREADS ***********************'
-    gzip -dkc < ${INSTANCE_DIR}/${lp}.mps.gz > ${OUTPUT_DIR}/${lp}.mps
     python run_PDLP.py \
            --problem_name=${lp} \
            --time_sec_limit=15000 \

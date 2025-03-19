@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$#" != 2 ]]; then
-  echo "Usage: run_PDLP_miplib.sh instance_folder output_directory" 1>&2
+  echo "Usage: run_cuPDLP_miplib_presolved.sh instance_folder output_directory" 1>&2
   exit 1
 fi
 
@@ -19,34 +19,12 @@ echo
 for lp in ${SMALL_AND_MEDIUM_INSTANCE_LIST}
 do
     echo ${lp}
-    echo '*********************** 1 THREAD ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=3600 \
-           --num_threads=1 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=0
-    echo 
-
-    echo '*********************** 4 THREADS ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=3600 \
-           --num_threads=4 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=0
-    echo 
-
-    echo '*********************** 16 THREADS ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=3600 \
-           --num_threads=16 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=0
+    julia --project run_cuPDLP_presolved.jl \
+          --problem_name=${lp} \
+          --tolerance=1e-4 \
+          --time_sec_limit=3600 \
+          --problem_folder="${INSTANCE_DIR}" \
+          --output_directory="${OUTPUT_DIR}"
     echo 
 done
 
@@ -55,34 +33,12 @@ echo
 for lp in ${LARGE_INSTANCE_LIST}
 do
     echo ${lp}
-    echo '*********************** 1 THREAD ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=18000 \
-           --num_threads=1 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=0
-    echo 
-
-    echo '*********************** 4 THREADS ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=18000 \
-           --num_threads=4 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=0
-    echo 
-
-    echo '*********************** 16 THREADS ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=18000 \
-           --num_threads=16 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=0
+    julia --project run_cuPDLP_presolved.jl \
+          --problem_name=${lp} \
+          --tolerance=1e-4 \
+          --time_sec_limit=18000 \
+          --problem_folder="${INSTANCE_DIR}" \
+          --output_directory="${OUTPUT_DIR}"
     echo 
 done
 
@@ -93,34 +49,12 @@ echo
 for lp in ${SMALL_AND_MEDIUM_INSTANCE_LIST}
 do
     echo ${lp}
-    echo '*********************** 1 THREAD ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=3600 \
-           --num_threads=1 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=1
-    echo 
-
-    echo '*********************** 4 THREADS ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=3600 \
-           --num_threads=4 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=1
-    echo 
-
-    echo '*********************** 16 THREADS ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=3600 \
-           --num_threads=16 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=1
+    julia --project run_cuPDLP_presolved.jl \
+          --problem_name=${lp} \
+          --tolerance=1e-8 \
+          --time_sec_limit=3600 \
+          --problem_folder="${INSTANCE_DIR}" \
+          --output_directory="${OUTPUT_DIR}"
     echo 
 done
 
@@ -129,34 +63,12 @@ echo
 for lp in ${LARGE_INSTANCE_LIST}
 do
     echo ${lp}
-    echo '*********************** 1 THREAD ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=18000 \
-           --num_threads=1 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=1
-    echo 
-
-    echo '*********************** 4 THREADS ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=18000 \
-           --num_threads=4 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=1
-    echo 
-
-    echo '*********************** 16 THREADS ***********************'
-    python run_PDLP.py \
-           --problem_name=${lp} \
-           --time_sec_limit=18000 \
-           --num_threads=16 \
-           --problem_folder=${INSTANCE_DIR} \
-           --output_directory=${OUTPUT_DIR} \
-           --high_accuracy=1
+    julia --project run_cuPDLP_presolved.jl \
+          --problem_name=${lp} \
+          --tolerance=1e-8 \
+          --time_sec_limit=18000 \
+          --problem_folder="${INSTANCE_DIR}" \
+          --output_directory="${OUTPUT_DIR}"
     echo 
 done
 

@@ -18,4 +18,9 @@ This dataset contains the union of the instances from Hans Mittelmann's linear p
 ```sh
 $ ./collect_mittelmann_lp.sh INSTANCE_FOLDER
 ```
-
+## Presolving
+Instances presolved by Gurobi are extracted for both MIPLIB relaxation and Mittelmann's LP datasets. `presolve_miplib_relaxations.sh` and `presolve_mittelmann_lp.sh` have the following argument structure:
+```sh
+$ ./presolve_miplib_relaxations.sh INSTANCE_FOLDER
+$ ./presolve_mittelmann_lp.sh INSTANCE_FOLDER
+```

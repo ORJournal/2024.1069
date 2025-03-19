@@ -65,6 +65,7 @@ function main()
     instance_path = joinpath("$(problem_folder)", "$(problem_name).mps")
     model = Model()
     model = read_from_file(instance_path)
+    relax_integrality(model)
 
     set_optimizer(model, Gurobi.Optimizer)
     set_optimizer_attribute(model, "TimeLimit", time_sec_limit)
