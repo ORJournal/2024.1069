@@ -4,11 +4,29 @@
 
 This archive is distributed in association with the journal [Operations Research](https://pubsonline.informs.org/journal/opre) under the [MIT License](LICENSE).
 
-The software in this repository is a snapshot of the software that was used in the research reported in the paper [cuPDLP.jl: A GPU Implementation of Restarted Primal-Dual Hybrid Gradient for Linear Programming in Julia]() by Haihao Lu and Jinwen Yang.
+The software in this repository is a snapshot of the software that was used in the research reported in the paper [cuPDLP.jl: A GPU Implementation of Restarted Primal-Dual Hybrid Gradient for Linear Programming in Julia](https://doi.org/10.1287/opre.2024.1069) by Haihao Lu and Jinwen Yang.
 
 ## Cite
 
 To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs.
+
+https://doi.org/10.1287/opre.2024.1069
+
+https://doi.org/10.1287/opre.2024.1069.cd
+
+
+Below is the BibTex for citing this snapshot of the repository.
+
+```
+@misc{lu2024cupdlp,
+  author =        {Lu, Haihao and Yang, Jinwen},
+  publisher =     {Operations Research},
+  title =         {{cuPDLP.jl: A GPU Implementation of Restarted Primal-Dual Hybrid Gradient for Linear Programming in Julia}},
+  year =          {2024},
+  doi =           {10.1287/opre.2024.1069.cd},
+  note =           {Available for download at https://github.com/ORJournal/2024.1069},
+}  
+```
 
 ## Description
 
@@ -21,6 +39,12 @@ Before running the experiments, ensure that the required packages are installed 
 ```shell
 $ julia --project -e 'import Pkg; Pkg.instantiate()'
 ```
+**Important Note for Julia 1.10 and later:** If you're using Julia version 1.10 or newer, you might run into trouble installing and running `cuPDLP.jl` directly. This is due to an older version of `Statistics` and `GPUCompiler`. Note that the original testing for this paper was done in Julia 1.9.2. To get everything working smoothly in Julia 1.10+, you'll need to run these commands in the Julia package manager (`pkg>`):
+```shell
+pkg> update Statistics
+pkg> add GPUCompiler@1.4.1
+```
+
 
 OR-Tools/PDLP is used through its Python interface. OR-Tools can be installed as follows:
 ```shell
